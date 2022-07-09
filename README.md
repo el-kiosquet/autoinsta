@@ -17,3 +17,5 @@ It is being published just as an idea and wont be finished soon.
 - Language selection, starting by Spanish!
 - Compatibility with Windows computers. (If possible)
 - The posibility of creating several profiles. Maybe you want to download some profiles through one account and other profiles though other account, or upload them to several online storages, or use some flags for one this and other ones for another thing, this update will bring this options.
+
+(I am new to GitHub so please take this into account and send any suggestions, ideas or recommendations)
