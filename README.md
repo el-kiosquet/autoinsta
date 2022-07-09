@@ -1,7 +1,7 @@
 # autoinsta
 Download files from instagram and upload them to an online storage such as Google Fotos automatically with the help of instaloader and rclone
 
-#### Disclaimer: I am not responsible for the misuse of this repository. Please consult your local laws as well as license terms before doing anything.
+**Disclaimer: I am not responsible for the misuse of this repository. Please consult your local laws as well as license terms before doing anything.**
 
 ## Proyect under construction!!! It is still not finished and will not work!!!
 This repository is in a very early stage and shouldn't be used until it's ready.
