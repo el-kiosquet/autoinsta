@@ -9,7 +9,7 @@ It is being published just as an idea and wont be finished soon.
 ### But if you like the idea, give this repository a Star! This will help you to find it later and motivate me to write faster the code!
 
 ## This repository will:
-- Automate instagram downloads and upload them to your online storage.
+- Automate instagram downloads and upload them to your online storage through your linux pc.
 - Help with instaloader and rclone configuration but still leaving some space so the more advanced can change flags and configuration.
 
 #### And in the long-term it will incorporate:
