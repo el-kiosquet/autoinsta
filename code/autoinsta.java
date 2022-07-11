@@ -48,7 +48,7 @@ public class autoinsta {
                                     "Add/View targets",
                                     "Add/View flags"};
         switch (menu(editInstaloader, kbd)) {
-            case 1: break;
+            case 1: instaloaderHandler.downloaderUser(); break;
             case 2: break;
             case 3: break;
             
