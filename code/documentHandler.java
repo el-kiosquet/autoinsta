@@ -33,6 +33,6 @@ public class documentHandler {
     
     /** Appends a given string to the file */
     public void append(String textToAdd) {
-        writeDocument.println(textToAdd);
+        try { writeDocument.println(textToAdd); } finally { writeDocument.close(); }
     }
 }
