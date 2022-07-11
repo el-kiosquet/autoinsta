@@ -11,7 +11,7 @@ public class documentHandler {
     public documentHandler(String documentRute) {
         try {
             document = new File(documentRute);
-            writeDocument = new PrintWriter(document);
+            writeDocument = new PrintWriter(new FileOutputStream(document, true));
             readDocument = new Scanner(this.document);
         } catch (FileNotFoundException e) {
             System.err.println("ERROR: File not found. Check permissions");
@@ -20,7 +20,7 @@ public class documentHandler {
 
     /** Prints the hole document on the terminal */
     public void print() {
-        while (readDocument.hasNext()) System.out.println(readDocument.next());
+        while (readDocument.hasNext()) System.out.println(readDocument.nextLine());
         readDocument.close();
     }
     
