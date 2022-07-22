@@ -2,4 +2,4 @@
 ./media/*
 
 # Ignores all files inside the config directory
-./config/*/*
+./config
