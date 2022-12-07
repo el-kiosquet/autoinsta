@@ -22,10 +22,6 @@ public class autoinsta {
             case 1: menuSelectProgramToEdit(); break;
             case 2: //TODO: Run program 
                 break;
-            
-            default:
-                System.err.println("Unnexpected error. If you see this message post a bug report");
-                break;
         }
     }
     public static void menuSelectProgramToEdit() {
@@ -37,9 +33,6 @@ public class autoinsta {
             case 1: menuEditInstaloader(); break;
             case 2: menuEditRclone(); break;
             case 3: menuEditAutoinsta(); break;
-            default:
-                System.err.println("Unnexpected error. If you see this message post a bug report");
-                break;
         }
     }
 
@@ -52,10 +45,6 @@ public class autoinsta {
             case 1: configHandler.downloaderUser("config\\instaloader\\downloaderUsername.txt"); break;
             case 2: configHandler.targets(); break;
             case 3: configHandler.flags("config\\instaloader\\flags.txt"); break;
-            
-            default:
-                System.err.println("Unexpected error. If you see this message post a bug report");
-                break;
         }
     }
 
@@ -68,10 +57,6 @@ public class autoinsta {
             case 1: configHandler.downloaderUser("config\\rclone\\downloaderUsername.txt"); break;
             case 2: System.out.println("Not implemented yet"); break;
             case 3: configHandler.flags("config\\rclone\\flags.txt"); break;
-            
-            default:
-                System.err.println("Unnexpected error. If you see this message post a bug report");
-                break;
         }
     }
 
@@ -80,24 +65,8 @@ public class autoinsta {
                                     "Select remote storage",};
         switch (menu(editAutoinsta)) {
             case 1: break;
-            
-            default:
-                System.err.println("Unnexpected error. If you see this message post a bug report");
-                break;
         }
     }
-
-    /* public static void menuSelectProgramToEdit(Scanner kbd) {
-        String[] SelectProgramToEdit = {"", "", ""};
-        switch (menu(SelectProgramToEdit, kbd)) {
-            case 1: break;
-            case 2: break;
-            
-            default:
-                System.err.println("Unnexpected error. If you see this message post a bug report");
-                break;
-        }
-    } */
 
     /** This method creates a menu with the options from 
      * the array given as the parameter and returns the 
