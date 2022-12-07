@@ -42,9 +42,9 @@ public class autoinsta {
                                     "Add/View targets",
                                     "Add/View flags"};
         switch (menu(editInstaloader)) {
-            case 1: configHandler.downloaderUser("config\\instaloader\\downloaderUsername.txt"); break;
-            case 2: configHandler.targets(); break;
-            case 3: configHandler.flags("config\\instaloader\\flags.txt"); break;
+            case 1: new documentHandler( "config\\instaloader\\downloaderUsername.txt" ).editDocument(true); break;
+            case 2: new documentHandler( "config\\instaloader\\targets.txt" ).editDocument(false); break;
+            case 3: new documentHandler( "config\\instaloader\\flags.txt" ).editDocument(false); break;
         }
     }
 
