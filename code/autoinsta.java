@@ -50,7 +50,7 @@ public class autoinsta {
                                     "Add/View flags"};
         switch (menu(editInstaloader)) {
             case 1: configHandler.downloaderUser("config\\instaloader\\downloaderUsername.txt"); break;
-            case 2: break;
+            case 2: configHandler.targets(); break;
             case 3: configHandler.flags("config\\instaloader\\flags.txt"); break;
             
             default:

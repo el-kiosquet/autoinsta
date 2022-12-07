@@ -25,6 +25,7 @@ public class configHandler {
                                 "Please input 1 flag at a time");
             String input = kbd.nextLine();
             flags.append( input );
+            flags( rute );
         } else {
             flags.print();
             System.out.println("To add new flags input them one at a time" + "\n" + 
@@ -43,6 +44,7 @@ public class configHandler {
                                 "Please input 1 target at a time");
             String input = kbd.nextLine();
             targets.append( input );
+            targets();
         } else {
             targets.print();
             System.out.println("To add new targets input them one at a time" + "\n" + 
