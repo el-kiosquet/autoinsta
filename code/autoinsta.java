@@ -65,9 +65,9 @@ public class autoinsta {
                                 "Configure",
                                 "Add/View flags"};
         switch (menu(editRclone)) {
-            case 1: break;
-            case 2: break;
-            case 3: break;
+            case 1: configHandler.downloaderUser("config\\rclone\\downloaderUsername.txt"); break;
+            case 2: System.out.println("Not implemented yet"); break;
+            case 3: configHandler.flags("config\\rclone\\flags.txt"); break;
             
             default:
                 System.err.println("Unnexpected error. If you see this message post a bug report");
