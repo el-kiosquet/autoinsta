@@ -1,5 +1,5 @@
 # Ignores all files inside the media directory
-./media/*
+./media/**
 
 # Ignores all files inside the config directory
-./config/*
+./config/**
