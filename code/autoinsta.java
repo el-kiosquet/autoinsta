@@ -49,9 +49,9 @@ public class autoinsta {
                                     "Add/View targets",
                                     "Add/View flags"};
         switch (menu(editInstaloader)) {
-            case 1: instaloaderHandler.downloaderUser(); break;
+            case 1: configHandler.downloaderUser(); break;
             case 2: break;
-            case 3: instaloaderHandler.flags(); break;
+            case 3: configHandler.flags(); break;
             
             default:
                 System.err.println("Unexpected error. If you see this message post a bug report");
