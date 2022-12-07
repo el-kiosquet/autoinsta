@@ -28,7 +28,10 @@ public class documentHandler {
 
     /** Prints the hole document on the terminal */
     public void print() {
-        while (readDocument.hasNext()) System.out.println(readDocument.nextLine());
+        for ( int i = 1; readDocument.hasNext(); i++ ) {
+            System.out.print ( i + " -> " );
+            System.out.println(readDocument.nextLine());
+        }
     }
     
     /** Appends a given string to the file */
