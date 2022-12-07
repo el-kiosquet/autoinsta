@@ -39,4 +39,31 @@ public class documentHandler {
         writeDocument.println(textToAdd);
         writeDocument.flush();
     }
+
+    public void removeLine(int n) {
+        try {
+            writeDocument.close();
+            File temp = File.createTempFile("", ".temp");
+            PrintWriter tempWriter = new PrintWriter(temp);
+            for( int i = 1; readDocument.hasNext(); i++ ) {
+                if( i != n ) tempWriter.println( readDocument.nextLine() );
+            }
+            writeDocument = new PrintWriter( new FileOutputStream( document )); // Overwrites document
+            tempWriter.close();
+            Scanner tempReader = new Scanner(temp);
+            while( tempReader.hasNext() ) {
+                writeDocument.println( tempReader.nextLine() );
+            }
+            tempReader.close();
+            temp.delete();
+            writeDocument.close();
+            writeDocument = new PrintWriter(new FileOutputStream(document, true));
+        }
+        catch ( FileNotFoundException e ) { 
+            System.err.println("ERROR: File not found. Check permissions");
+        }
+        catch ( IOException e ) {
+            System.err.println("ERROR: Temporaly file could not be created. Check permissions");
+        }
+    }
 }
