@@ -1,6 +1,7 @@
 package code;
 
 import java.io.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class documentHandler {
@@ -64,6 +65,40 @@ public class documentHandler {
         }
         catch ( IOException e ) {
             System.err.println("ERROR: Temporaly file could not be created. Check permissions");
+        }
+    }
+
+    static Scanner kbd = autoinsta.kbd; //Uses same Scanner as in the main class
+    /** This method prints the selected configuration file
+     * and lets the user modify it
+     * @param isJustOne True if there can only be 1 element (e.g. downloaderUsername)
+     */
+    public void editDocument( boolean isJustOne ) {
+        if ( this.isEmpty() ) {
+            System.out.println( "Still not any data configured!" + "\n" +
+                                "Please input data:");
+            String input = kbd.nextLine();
+            this.append( input );
+            System.out.println(input + " added");
+            if(! isJustOne) editDocument(isJustOne);
+        } else {
+            System.out.println("Data stored:");
+            this.print();
+            if(! isJustOne) System.out.println("Input text to add it");
+            System.out.println( "Input a line number to delete it" + "/n" + 
+                                "Input 0 to exit");
+            kbd.hasNext();
+            if (kbd.hasNextInt()) {
+                if (kbd.nextInt() != 0) this.removeLine(kbd.nextInt());
+                kbd.nextLine();
+            } else {
+                if (isJustOne) {
+                    System.err.println("Only integers are admited");
+                } else {
+                    this.append(kbd.nextLine());
+                }
+            }
+            
         }
     }
 }
