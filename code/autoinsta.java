@@ -8,17 +8,18 @@ package code;
 
 public class autoinsta {
 
+    
+    static Scanner kbd = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Welcome to autoinsta");
-        Scanner kbd = new Scanner(System.in);
-        menuEditOrRun(kbd);
+        menuEditOrRun();
 
     }
 
-    public static void menuEditOrRun(Scanner kbd) {
+    public static void menuEditOrRun() {
         String[] editOrRun = {"", "Edit", "Run"};
-        switch (menu(editOrRun, kbd)) {
-            case 1: menuSelectProgramToEdit(kbd); break;
+        switch (menu(editOrRun)) {
+            case 1: menuSelectProgramToEdit(); break;
             case 2: //TODO: Run program 
                 break;
             
@@ -27,28 +28,28 @@ public class autoinsta {
                 break;
         }
     }
-    public static void menuSelectProgramToEdit(Scanner kbd) {
+    public static void menuSelectProgramToEdit() {
         String[] SelectProgramToEdit = {"",
                                         "Edit instaloader configuration",
                                         "Edit rclone configuration",
                                         "Edit autoinsta configuration"};
-        switch (menu(SelectProgramToEdit, kbd)) {
-            case 1: menuEditInstaloader(kbd); break;
-            case 2: menuEditRclone(kbd); break;
-            case 3: menuEditAutoinsta(kbd); break;
+        switch (menu(SelectProgramToEdit)) {
+            case 1: menuEditInstaloader(); break;
+            case 2: menuEditRclone(); break;
+            case 3: menuEditAutoinsta(); break;
             default:
                 System.err.println("Unnexpected error. If you see this message post a bug report");
                 break;
         }
     }
 
-    public static void menuEditInstaloader(Scanner kbd) {
+    public static void menuEditInstaloader() {
         String[] editInstaloader = {"",
                                     "Add/View downloader username and/or password",
                                     "Add/View targets",
                                     "Add/View flags"};
-        switch (menu(editInstaloader, kbd)) {
-            case 1: instaloaderHandler.downloaderUser(); break;
+        switch (menu(editInstaloader)) {
+            case 1: instaloaderHandler.downloaderUser( kbd ); break;
             case 2: break;
             case 3: break;
             
@@ -58,12 +59,12 @@ public class autoinsta {
         }
     }
 
-    public static void menuEditRclone(Scanner kbd) {
+    public static void menuEditRclone() {
         String[] editRclone = { "",
                                 "Add/View username and/or password",
                                 "Configure",
                                 "Add/View flags"};
-        switch (menu(editRclone, kbd)) {
+        switch (menu(editRclone)) {
             case 1: break;
             case 2: break;
             case 3: break;
@@ -74,10 +75,10 @@ public class autoinsta {
         }
     }
 
-    public static void menuEditAutoinsta(Scanner kbd) {
+    public static void menuEditAutoinsta() {
         String[] editAutoinsta = {  "",
                                     "Select remote storage",};
-        switch (menu(editAutoinsta, kbd)) {
+        switch (menu(editAutoinsta)) {
             case 1: break;
             
             default:
@@ -108,7 +109,7 @@ public class autoinsta {
      * @return Returns the selected option corresponding
      * to their position on the array.
      */
-    public static int menu(String[] options, Scanner kbd) {
+    public static int menu( String[] options ) {
         while (true) {
             try {
                 System.out.println("Please select a valid option from 0 to " + (options.length - 1) );
@@ -117,6 +118,7 @@ public class autoinsta {
                     System.out.printf("%d: %s" + "\n", i, options[i]);
                 }
                 int in = kbd.nextInt();
+                kbd.nextLine();
                 if (in >= 0 && in < options.length) {
                     if (in == 0) {
                         System.out.print("Bye!");
